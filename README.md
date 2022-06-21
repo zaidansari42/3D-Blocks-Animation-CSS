@@ -2,7 +2,7 @@
 
 # Shoes-Card
 
-<<<<<<< HEAD
+
 This is a design of the Nike Shoes Card Animation on hover effect.
 
 ## Table of contents
