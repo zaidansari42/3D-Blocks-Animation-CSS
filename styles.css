@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -65,7 +65,7 @@ span {
 }
 
 .text::before {
-  content: "";
+  content: '';
   position: absolute;
   background: #38a58f;
   transform-origin: left;
@@ -89,4 +89,21 @@ span {
 
 .container:hover .text:last-child {
   transform: rotateX(810deg);
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    margin: 0.5em;
+  }
+  .text {
+    height: 70px;
+    width: 70px;
+  }
+  span {
+    font-size: 3em;
+    transform: rotateX(calc(90deg * var(--i))) translateZ(34.5px);
+  }
+  .text::before {
+    transform: rotateY(90deg) translateX(-35px);
+  }
 }
