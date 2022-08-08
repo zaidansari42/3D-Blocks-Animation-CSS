@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(#4568dc, #b06ab3);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin: 2em;
+  text-align: center;
+}
+
+.container {
+  margin: 2em auto;
+  display: flex;
+
+  gap: 10px;
+
+  transform-style: preserve-3d;
+  transform: rotateY(30deg) rotateX(10deg);
+}
+
+.text {
+  height: 100px;
+  width: 100px;
+  position: relative;
+
+  transition: 2.5s ease-in-out;
+  transform-style: preserve-3d;
+  transition-delay: calc(0.25s * var(--j));
+}
+
+span {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(#f8ffae, #43c6ac);
+  font-size: 4em;
+  color: rgb(72, 0, 255);
+  border: 1px solid;
+
+  transform-style: preserve-3d;
+  transform: rotateX(calc(90deg * var(--i))) translateZ(50px);
+}
+
+.text::before {
+  content: '';
+  position: absolute;
+  background: #38a58f;
+  transform-origin: left;
+  height: 100%;
+  width: 100%;
+  transform: rotateY(90deg) translateX(-50.5px);
+}
+
+.container .text:last-child span {
+  background: linear-gradient(#ffafbd, #ffc3a0);
+  color: rgb(136, 0, 255);
+}
+
+.container .text:last-child::before {
+  background: #b3886e;
+}
+
+.container:hover .text {
+  transform: rotateX(-360deg);
+}
+
+.container:hover .text:last-child {
+  transform: rotateX(810deg);
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    margin: 0.5em;
+  }
+  .text {
+    height: 70px;
+    width: 70px;
+  }
+  span {
+    font-size: 3em;
+    transform: rotateX(calc(90deg * var(--i))) translateZ(34.5px);
+  }
+  .text::before {
+    transform: rotateY(90deg) translateX(-35px);
+  }
+}
